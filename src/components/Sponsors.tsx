@@ -49,10 +49,10 @@ export function Sponsors() {
       url: 'https://kaedings.com/', 
       logo: kaedingLogo 
     },
-    { 
-      name: 'Maxim Racing', 
-      url: '#', 
-      logo: maximRacingLogo 
+    {
+      name: 'Maxim Racing',
+      url: 'https://www.maximracing.com',
+      logo: maximRacingLogo
     },
   ];
 
