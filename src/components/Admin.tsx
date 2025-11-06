@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { AIDashboard } from './AIDashboard';
 
 interface VisitStats {
   totalVisits: number;
@@ -11,6 +12,7 @@ interface VisitStats {
 }
 
 export function Admin() {
+  const [activeView, setActiveView] = useState<'admin' | 'ai'>('admin');
   const [visitStats, setVisitStats] = useState<VisitStats | null>(null);
   const [isLoadingStats, setIsLoadingStats] = useState(true);
 
@@ -142,9 +144,52 @@ export function Admin() {
     }
   };
 
+  // If AI view is selected, render AI Dashboard
+  if (activeView === 'ai') {
+    return (
+      <div className="bg-[#0a0a0a] min-h-screen">
+        <div className="sticky top-0 bg-[#0a0a0a] border-b border-[#1a1a1a] z-50">
+          <div className="max-w-[1400px] mx-auto px-10 py-[20px]">
+            <div className="flex gap-[10px]">
+              <button
+                onClick={() => setActiveView('admin')}
+                className="bg-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.1)] text-white px-[25px] py-[12px] text-[0.85em] tracking-[0.15em] font-bold transition-all duration-300"
+              >
+                ADMIN PANEL
+              </button>
+              <button
+                onClick={() => setActiveView('ai')}
+                className="bg-[#ff6600] text-white px-[25px] py-[12px] text-[0.85em] tracking-[0.15em] font-bold"
+              >
+                AI DASHBOARD
+              </button>
+            </div>
+          </div>
+        </div>
+        <AIDashboard />
+      </div>
+    );
+  }
+
   return (
     <section className="bg-[#0a0a0a] text-white py-[100px] px-10 min-h-screen">
       <div className="max-w-[1200px] mx-auto">
+        {/* View Toggle */}
+        <div className="flex justify-center gap-[10px] mb-[40px]">
+          <button
+            onClick={() => setActiveView('admin')}
+            className="bg-[#ff6600] text-white px-[25px] py-[12px] text-[0.85em] tracking-[0.15em] font-bold"
+          >
+            ADMIN PANEL
+          </button>
+          <button
+            onClick={() => setActiveView('ai')}
+            className="bg-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.1)] text-white px-[25px] py-[12px] text-[0.85em] tracking-[0.15em] font-bold transition-all duration-300"
+          >
+            AI DASHBOARD
+          </button>
+        </div>
+
         <h1
           className="text-center mb-[80px] tracking-[0.1em] uppercase relative pb-[30px]"
           style={{
