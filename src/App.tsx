@@ -10,6 +10,7 @@ import { Sponsors } from './components/Sponsors';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Admin } from './components/Admin';
+import { Dashboard } from './components/Dashboard';
 import { Loading } from './components/Loading';
 import carImage1 from './assets/9af74f7de68473c678e8346a58b6dd170eb61358.png';
 import carImage2 from './assets/5276abd9ae1edcabc7726464a9ac05adad7f2545.png';
@@ -20,15 +21,26 @@ export default function App() {
   const [showAdmin, setShowAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Check URL for admin access
+  // Check URL for admin and dashboard access
   const urlParams = new URLSearchParams(window.location.search);
   const isAdmin = urlParams.get('admin') === 'true' || showAdmin;
+  const isDashboard = urlParams.get('dashboard') === 'true';
 
   // Show loading screen
   if (isLoading) {
     return <Loading onComplete={() => setIsLoading(false)} />;
   }
 
+  // Show AI Dashboard
+  if (isDashboard) {
+    return (
+      <div className="bg-[#0a0a0a] min-h-screen">
+        <Dashboard />
+      </div>
+    );
+  }
+
+  // Show Admin Panel
   if (isAdmin) {
     return (
       <div className="bg-[#0a0a0a] min-h-screen">
