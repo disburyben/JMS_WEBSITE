@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { NextEvent } from './components/NextEvent';
 import { Store } from './components/Store';
 import { About } from './components/About';
 import { Drivers } from './components/Drivers';
@@ -41,7 +40,6 @@ export default function App() {
     <div className="bg-[#0a0a0a] overflow-x-hidden">
       <Navigation />
       <Hero heroImage={carImage1} />
-      <NextEvent />
       <About carImages={carImages} />
       <Drivers />
       <Schedule />
