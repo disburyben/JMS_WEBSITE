@@ -12,7 +12,7 @@ export const Navigation = () => (
         {/* Navigation Links */}
         <div class="hidden md:flex items-center space-x-8">
           <a href="/" class="text-white hover:text-red-600 transition-colors font-medium">Home</a>
-          <a href="/shop" class="text-white hover:text-red-600 transition-colors font-medium">Shop</a>
+          <a href="https://jms-motorsport-store.myshopify.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-red-600 transition-colors font-medium">Store</a>
           <a href="/racing" class="text-white hover:text-red-600 transition-colors font-medium">Racing</a>
           <a href="/about" class="text-white hover:text-red-600 transition-colors font-medium">About</a>
           <a href="/contact" class="text-white hover:text-red-600 transition-colors font-medium">Contact</a>
@@ -45,7 +45,7 @@ export const MobileMenu = () => (
       
       <nav class="mt-12 space-y-4">
         <a href="/" class="block text-lg font-medium hover:text-red-600 transition-colors">Home</a>
-        <a href="/shop" class="block text-lg font-medium hover:text-red-600 transition-colors">Shop</a>
+        <a href="https://jms-motorsport-store.myshopify.com/" target="_blank" rel="noopener noreferrer" class="block text-lg font-medium hover:text-red-600 transition-colors">Store</a>
         <a href="/racing" class="block text-lg font-medium hover:text-red-600 transition-colors">Racing</a>
         <a href="/about" class="block text-lg font-medium hover:text-red-600 transition-colors">About</a>
         <a href="/contact" class="block text-lg font-medium hover:text-red-600 transition-colors">Contact</a>
