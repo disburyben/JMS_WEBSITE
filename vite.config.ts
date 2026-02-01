@@ -4,10 +4,10 @@ import adapter from '@hono/vite-dev-server/cloudflare'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  build: {
+    outDir: 'dist'
+  },
   plugins: [
-      build: {
-            outDir: 'build'
-      },
     build(),
     devServer({
       adapter,
