@@ -4,14 +4,14 @@ import adapter from '@hono/vite-dev-server/cloudflare'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [
-      build: {
-            outDir: 'build'
-      },
-    build(),
-    devServer({
-      adapter,
-      entry: 'src/index.tsx'
-    })
-  ]
+    plugins: [
+          build(),
+          devServer({
+                  adapter,
+                  entry: 'src/index.tsx'
+          })
+        ],
+    build: {
+          outDir: 'build'
+    }
 })
