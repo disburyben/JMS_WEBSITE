@@ -26,7 +26,11 @@ export const renderer = jsxRenderer(({ children }) => {
         {/* Axios for API calls */}
         <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
       </head>
-      <body class="bg-black text-white">{children}</body>
+      <body class="bg-black text-white">
+        {children}
+        <script dangerouslySetInnerHTML={{__html: `window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };`}} />
+        <script defer src="/_vercel/speed-insights/script.js"></script>
+      </body>
     </html>
   )
 })
